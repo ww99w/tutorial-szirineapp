@@ -14,4 +14,4 @@ import { Tab2Page } from './chat.page';
   ],
   declarations: [Tab2Page]
 })
-export class Tab2PageModule {}
+export class ChatPageModule {}

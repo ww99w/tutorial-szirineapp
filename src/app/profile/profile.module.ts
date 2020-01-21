@@ -14,4 +14,4 @@ import { Tab3Page } from './profile.page';
   ],
   declarations: [Tab3Page]
 })
-export class Tab3PageModule {}
+export class ProfilePageModule {}
