@@ -13,13 +13,15 @@ const TOKEN_KEY = 'auth-token';
  * See: https://ionicframework.com/docs/building/storage
  */
 export class AuthenticationService {
-  authenticationState = new BehaviorSubject(false);  constructor(
-    private storage: Storage, private platform: Platform
-  ) {
+  authenticationState = new BehaviorSubject(false);
+  
+  constructor (private storage: Storage, private platform: Platform ) {
     this.platform.ready().then(() => {
       this.checkToken();
     });
-  }  checkToken() {
+  }  
+  
+  checkToken() {
     return new Promise( (resolve, reject) => {
       this.storage.get(TOKEN_KEY)
       .then(res => {
@@ -32,17 +34,23 @@ export class AuthenticationService {
         reject(error);
       });
     });
-  }  login(username, password) {
+  }  
+  
+  login(username, password) {
     const accessToken = btoa(username + ':' + password);
     const token = 'Bearer ' + accessToken;
     return this.storage.set(TOKEN_KEY, token).then(() => {
       this.authenticationState.next(true);
     });
-  }  logout() {
+  }  
+  
+  logout() {
     return this.storage.remove(TOKEN_KEY).then(() => {
       this.authenticationState.next(false);
     });
-  }  isAuthenticated() {
+  }  
+  
+  isAuthenticated() {
     return new Promise( (resolve, reject) => {
       this.checkToken()
       .then( res => {

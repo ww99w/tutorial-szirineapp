@@ -35,11 +35,13 @@ import { Component, OnInit } from '@angular/core';const data = [
     thumbnail: 'http://www.szirine.com/wpmain/uploads/2015/12/fnhum-06-00066-g006.jpg',
     text: 'One of my favorite garage punk songs by English artists is the Headcoats\’ \‘Art or Arse\’ with Billy Childish (from Tracey Emin). It raises the question of all times, \‘What is Art?\’. To answer this, one could look at the neural activity during an aesthetic experience. At NYU\’s Casa Italiana, Gabrielle Starr and Alva Noe debate the role of neuroscience.'
   }
-  ];@Component({
+  ];
+  @Component({
     selector: 'app-feed',
     templateUrl: 'feed.page.html',
     styleUrls: ['feed.page.scss']
-  })export class FeedPage implements OnInit {
+  })
+  export class FeedPage implements OnInit {
     articles: any = [];  constructor() {}  ngOnInit() {
       this.articles = data;
     }}

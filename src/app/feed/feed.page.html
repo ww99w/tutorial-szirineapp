@@ -1,16 +1,18 @@
 <ion-header no-border class="bar bar-subheader">
   <ion-toolbar mode="ios">
     <ion-title>
-    Feed
+      Feed
     </ion-title>
   </ion-toolbar>
-</ion-header><ion-content>
-  <ion-list lines="none">    <ion-item *ngFor="let a of articles; let i = index">
+</ion-header>
+<ion-content>
+  <ion-list lines="none">
+    <ion-item *ngFor="let a of articles; let i = index">
       <ion-card>
         <ion-card-header>
           <ion-grid>
             <ion-row>
-              <ion-col size="3"  class="date-label">
+              <ion-col size="3" class="date-label">
                 <ion-row class="date-label-month">{{ a.published.month }}</ion-row>
                 <ion-row class="date-label-day">{{ a.published.day }}</ion-row>
                 <ion-row class="date-label-year">{{ a.published.year }}</ion-row>
@@ -28,7 +30,8 @@
         </ion-card-header>
         <ion-img [src]="a.thumbnail"></ion-img>
         <ion-card-content>
-        <p>{{ a.text }} <ion-icon name="arrow-forward"></ion-icon></p>
+          <p>{{ a.text }} <ion-icon name="arrow-forward"></ion-icon>
+          </p>
         </ion-card-content>
       </ion-card>
     </ion-item>
